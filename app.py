@@ -15,5 +15,4 @@ st.write(even_list)
 
 st.write(odd_list)
 
-streamlit run app.py
 
