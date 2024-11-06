@@ -10,8 +10,6 @@ odd_list = return_odd(original_list)
 
 st.write("we connected everything")
 
-st.header("My header")
-
 st.write(even_list)
 
 st.write(odd_list)
