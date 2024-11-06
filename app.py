@@ -14,3 +14,6 @@ st.write("we connected everything")
 st.write(even_list)
 
 st.write(odd_list)
+
+streamlit run app.py
+
