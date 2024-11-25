@@ -11,7 +11,7 @@ def test():
         ("Start", "Suchmaschine", "Spiel")
     )
 
-    # Inhalte je nach gewählter Option
+    # Für jede Option in der Navigation Inhalte widergeben
     if option == "Start":
         st.header("Willkommen auf der Startseite!")
         st.write("Hier können allgemeine Informationen oder eine Einführung stehen.")
