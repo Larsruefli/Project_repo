@@ -1,5 +1,5 @@
 import streamlit as st
-import Testing_Visualisation
+from Testing_Visualisation import test
 
 from Feature_01 import return_even
 from Feature_02 import return_odd
@@ -16,4 +16,6 @@ st.write(even_list)
 
 st.write(odd_list)
 
+
+test()
 
