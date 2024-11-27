@@ -11,5 +11,5 @@ def test():
     with col2:
         search_button = st.button("Search")
         
-        if search_button:
+    if search_button:
             st.write(f"Suchergebnisse für: {user_input}")
