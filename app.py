@@ -7,7 +7,7 @@ import game
 st.sidebar.title("Navigation")
 option = st.sidebar.radio(
     "Wählen Sie eine Option:",
-    ("Start", "Suchmaschine", "Spiel")
+    ("Start", "Search", "Spiel")
 )
 
 # Für jede Option in der Navigation Inhalte widergeben
