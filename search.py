@@ -6,3 +6,4 @@ def test():
     query = st.text_input("Geben Sie ein, wonach Sie suchen möchten:")
     if st.button("Suchen"):
         st.write(f"Suchergebnisse für: {query}")
+        
