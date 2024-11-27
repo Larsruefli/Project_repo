@@ -13,7 +13,7 @@ option = st.sidebar.radio(
 # Für jede Option in der Navigation Inhalte widergeben
 if option == "Start":
     start.test()
-elif option == "Search Engine":
+elif option == "Search":
     search.test()
 elif option == "Spiel":
     game.test()
