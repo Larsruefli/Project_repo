@@ -1,28 +1,20 @@
 import streamlit as st
-from Search_Engine import test
+import start
+import search
+import game
 
-# Titel der Web-App
-def test():    
-    st.title("Who am I?")
+# Sidebar mit Navigationsoptionen
+st.sidebar.title("Navigation")
+option = st.sidebar.radio(
+    "Wählen Sie eine Option:",
+    ("Start", "Suchmaschine", "Spiel")
+)
 
-    # Sidebar mit Navigationsoptionen
-    st.sidebar.title("Navigation")
-    option = st.sidebar.radio(
-        "Wählen Sie eine Option:",
-        ("Start", "Suchmaschine", "Spiel")
-    )
-
-    # Für jede Option in der Navigation Inhalte widergeben
-    if option == "Start":
-        st.header("Willkommen auf der Startseite!")
-        st.write("Hier können allgemeine Informationen oder eine Einführung stehen.")
-
-    elif option == "Suchmaschine":
-        search_engine.app()
-    elif option == "Spiel":
-        st.header("Spielbereich")
-        st.write("Hier könnte ein kleines Spiel eingebunden werden.")
-        if st.button("Starte ein Spiel"):
-            st.write("Spiel gestartet! (Hier könnte später ein Spiel eingebaut werden.)")
-test()
+# Für jede Option in der Navigation Inhalte widergeben
+if option == "Start":
+    start.test()
+elif option == "Suchmaschine":
+    search.test()
+elif option == "Spiel":
+    game.test()
 
