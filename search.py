@@ -13,3 +13,13 @@ def test():
         
     if search_button:
             st.write(f"Suchergebnisse für: {user_input}")
+
+    # Calling results from a players llist // Attention on what should be displayed and how (in line 22): Name, ...!!!
+    if user_input:
+        results = [item for item in list if user_input.lower() in item["Name"].lower()]
+        if results:
+             for result in results:
+                  st.write(f"Name: {result['Name']}")
+        else:
+            st.write("No results found")
+
