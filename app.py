@@ -3,6 +3,7 @@ import start
 import search
 import game
 
+
 # Sidebar mit Navigationsoptionen
 st.sidebar.title("Navigation")
 option = st.sidebar.radio(
