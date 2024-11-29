@@ -17,8 +17,6 @@ def test():
 
     #Indiz vor der ersten Frage. Wo?
 
-    st.title("Fragenvorlagen mit Optionen")
-
     # Erste Selectbox mit Vorlagen
     question_template = st.selectbox(
         "Wählen Sie eine Vorlage für Ihre Frage:",
