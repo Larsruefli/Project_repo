@@ -17,11 +17,10 @@ def test():
             results = [item for item in players if user_input.lower() in item["Name"].lower()]
 
     # Calling results from a players llist // Attention on what should be displayed and how (in line 22): Name, ...!!!
-    if user_input:
-        results = [item for item in players if user_input.lower() in item["Name"].lower()]
-        if results:
-             for result in results:
-                  st.write(f"Name: {result['Name']}, Position: {result['Position']}, Team: {result['Team']}")
-        else:
-            st.write("No results found")
+    
+            if results:
+                for result in results:
+                    st.write(f"Name: {result['Name']}, Position: {result['Position']}, Team: {result['Team']}")
+            else:
+                st.write("No results found")
 
