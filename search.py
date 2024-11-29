@@ -1,4 +1,5 @@
 import streamlit as st
+from players_data import players
 
 def test():
     st.header("Search Engine")
@@ -16,7 +17,7 @@ def test():
 
     # Calling results from a players llist // Attention on what should be displayed and how (in line 22): Name, ...!!!
     if user_input:
-        results = [item for item in list if user_input.lower() in item["Name"].lower()]
+        results = [item for item in players if user_input.lower() in item["Name"].lower()]
         if results:
              for result in results:
                   st.write(f"Name: {result['Name']}")
