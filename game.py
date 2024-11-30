@@ -34,7 +34,8 @@ def test():
                 "Choose my club:",
                 ["Real Madrid", "Arsenal", "Liverpool"] #!!!!!
             )
-            container.write(question_template, current_club)
+            selected = current_club
+            return question_template, selected
             
 
         elif question_template == "I play in ... (league)":
@@ -97,10 +98,13 @@ def test():
 
     with col3:
         search_button = st.button("Ask Question")
+        
+
 
     container = st.container(border= True)
-
-    container.write("This is my container")
+    with container:
+        if search_button:
+            container.write(question_template, selected)
 
 
 
