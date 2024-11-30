@@ -97,6 +97,9 @@ def test():
     with col3:
         search_button = st.button("Ask Question")
 
+    container = st.container(border= True)
+    container.write("This is my container")
+
 
 
     
