@@ -61,12 +61,12 @@ def test():
             )
 
         elif question_template == "I am older than ...(age)":
-            age = st.slider(
+            age = st.slider("",
                 min_value=15, max_value=45, value=30, step=1
             )
 
         elif question_template == "I am younger than ...(age)":
-            age = st.slider(
+            age = st.slider("",
                 min_value=15, max_value=45, value=30, step=1
             )
 
