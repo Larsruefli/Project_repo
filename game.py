@@ -19,7 +19,7 @@ def test():
 
     # Erste Selectbox mit Fragen
 
-    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
+    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="center")
 
     with col1:
         question_template = st.selectbox(
