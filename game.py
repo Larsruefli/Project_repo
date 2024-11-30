@@ -23,7 +23,7 @@ def test():
 
     col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
 
-    container = st.container()
+    container = st.container(border= True)
 
     with col1:
         question_template = st.selectbox(
@@ -95,6 +95,7 @@ def test():
                 "Select my height:",
                 min_value=1.50, max_value=2.20, value=1.85, step=0.01
             )
+            selected = f"taller than {height} cm"
 
         elif question_template == "I am shorter than ...(height)":
             height = st.selectbox(
@@ -106,7 +107,7 @@ def test():
         if st.button("Ask Question"):
             with container:
                 if selected:
-                    st.write(f"**Question:** {question_template.replace('...', selected)}")
+                    st.write(f"{question_template.replace('...', selected)}")
                 else:
                     st.warning("Please provide an additional input to complete the question.")
         
