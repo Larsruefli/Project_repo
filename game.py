@@ -105,4 +105,10 @@ def test():
                 min_value=1.50, max_value=2.20, value=1.85, step=0.01
             )
             st.write(f"I am shorter than {height}")
+
+    with col3:
+        search_button = st.button("Ask Question")
+
+    
+        
  
