@@ -109,7 +109,7 @@ def test():
             selected = f"taller than {height} cm"
 
         elif question_template == "I am shorter than ...(height)":
-            height = st.selectbox(
+            height = st.slider(
                 "Select my height:",
                 min_value=150, max_value=220, value=185, step=1
             )
