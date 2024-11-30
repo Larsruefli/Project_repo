@@ -103,14 +103,14 @@ def test():
 
         elif question_template == "I am taller than ...":
             height = st.slider(
-                "Select my height:",
+                "",
                 min_value=150, max_value=220, value=185, step=1
             )
             selected = f"taller than {height} cm"
 
         elif question_template == "I am shorter than ...":
             height = st.slider(
-                "Select my height:",
+                "",
                 min_value=150, max_value=220, value=185, step=1
             )
             selected = f"shorter than {height} cm"
