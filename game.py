@@ -14,14 +14,16 @@ def test():
     )
 
     st.write("You selected:", option)
+
     
-    container = st.container()
 
     #Indiz vor der ersten Frage. Wo?
 
     # Erste Selectbox mit Fragen
 
     col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
+
+    container = st.container()
 
     with col1:
         question_template = st.selectbox(
