@@ -14,6 +14,8 @@ def test():
     )
 
     st.write("You selected:", option)
+    
+    container = st.container()
 
     #Indiz vor der ersten Frage. Wo?
 
@@ -107,10 +109,6 @@ def test():
                     st.warning("Please provide an additional input to complete the question.")
         
 
-
-    container = st.container(border= True)
-    with container:
-        pass
 
 
 
