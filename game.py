@@ -59,53 +59,62 @@ def test():
                 "Choose my country:",
                 ["Germany", "Switzerland", "Spain"]
             )
+            selected = nationality
+
 
         elif question_template == "I used to play for ...(club)":
             past_club = st.selectbox(
                 "Choose a club:",
                 ["Real Mardid", "Arsenal", "Liverpool"]
             )
+            selected = past_club
 
         elif question_template == "I am a ... winner (achievement)":
             achievements = st.selectbox(
                 "Choose my achievements:",
                 ["Top 5 league", "Champions League", "World Cup", "European championship", "Europa League"]
             )
+            selected = achievements
 
         elif question_template == "I am older than ...(age)":
             age = st.slider("",
                 min_value=15, max_value=45, value=30, step=1
             )
+            selected = f"older than {age}"
 
         elif question_template == "I am younger than ...(age)":
             age = st.slider("",
                 min_value=15, max_value=45, value=30, step=1
             )
+            selected = f"younger than {age}"
 
         elif question_template == "I play as ...(position)":
             position = st.selectbox(
                 "Choose a position:",
                 ["GK", "Defender", "Midfielder", "Striker"]
             )
+            selected = position
 
         elif question_template == "I wear the shirt number ... at my current club (shirt number)":
             shirt_number = st.selectbox(
                 "Write a shirt number:",
                 ["Unter 20", "20-30", "Über 30"]
             )
+            selected = shirt_number
 
         elif question_template == "I am taller than ...(height)":
             height = st.slider(
                 "Select my height:",
-                min_value=1.50, max_value=2.20, value=1.85, step=0.01
+                min_value=150, max_value=220, value=185, step=1
             )
             selected = f"taller than {height} cm"
 
         elif question_template == "I am shorter than ...(height)":
             height = st.selectbox(
                 "Select my height:",
-                min_value=1.50, max_value=2.20, value=1.85, step=0.01
+                min_value=150, max_value=220, value=185, step=1
             )
+            selected = f"shorter than {height} cm"
 
  # Ask Question Button
     with col3:
