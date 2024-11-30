@@ -1,52 +1,60 @@
 import streamlit as st
 
+# Define the main function
 def test():
     st.header("Who am I?")
 
     # Display the logo at the top of the page
-    st.image("logo.png", width = 100)
+    st.image("logo.png", width=100)
 
+    # Initialize or retrieve the list of questions from session state
+    if "questions" not in st.session_state:
+        st.session_state.questions = []
+
+    # Select difficulty level
     option = st.selectbox(
-    "How difficult should the Game be?",
-    ("None", "Easy", "Medium", "Hard"),
-    index=None,
-    placeholder="Select a difficulty level...",
+        "How difficult should the Game be?",
+        ("None", "Easy", "Medium", "Hard"),
+        index=0,
+        placeholder="Select a difficulty level..."
     )
-
     st.write("You selected:", option)
 
-    
-
-    #Indiz vor der ersten Frage. Wo?
-
-    # Erste Selectbox mit Fragen
-
-    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
-
-    container = st.container(border= True)
+    # First Selectbox for questions
+    col1, col2, col3 = st.columns([2, 2, 1], vertical_alignment="bottom")
 
     with col1:
         question_template = st.selectbox(
             "Choose a question:",
-            ["I am currently playing for ...(club)", "I play in ... (league)", "I am from ...(nationality)", "I used to play for ...(club)", "I am a ... winner (achievement)", "I am older than ...(age)", "I am younger than ...(age)", "I play as ...(position)", "I wear the shirt number ... at my current club (shirt number)", "I am taller than ...(height)", "I am shorter than ...(height)"]
+            [
+                "I am currently playing for ...(club)",
+                "I play in ... (league)",
+                "I am from ...(nationality)",
+                "I used to play for ...(club)",
+                "I am a ... winner (achievement)",
+                "I am older than ...(age)",
+                "I am younger than ...(age)",
+                "I play as ...(position)",
+                "I wear the shirt number ... at my current club (shirt number)",
+                "I am taller than ...(height)",
+                "I am shorter than ...(height)"
+            ]
         )
 
-    # Weiterführende Auswahl von Kriterien durch if Funktion
+    # Additional input based on the selected question
     with col2:
         selected = None
         if question_template == "I am currently playing for ...(club)":
             current_club = st.selectbox(
                 "Choose my club:",
-                ["Real Madrid", "Arsenal", "Liverpool"] #!!!!!
+                ["Real Madrid", "Arsenal", "Liverpool"]
             )
             selected = current_club
-            
-            
 
         elif question_template == "I play in ... (league)":
             league = st.selectbox(
                 "Choose my league:",
-                ["Premier League", "Bundesliga", "Eredivise", "LaLiga", "Serie A", "Ligue 1", "Liga Portugal", "Süper Lig", "Jupiler Pro League"]
+                ["Premier League", "Bundesliga", "LaLiga", "Serie A"]
             )
             selected = league
 
@@ -55,67 +63,75 @@ def test():
                 "Choose my country:",
                 ["Germany", "Switzerland", "Spain"]
             )
+            selected = nationality
 
         elif question_template == "I used to play for ...(club)":
             past_club = st.selectbox(
                 "Choose a club:",
-                ["Real Mardid", "Arsenal", "Liverpool"]
+                ["Real Madrid", "Arsenal", "Liverpool"]
             )
+            selected = past_club
 
         elif question_template == "I am a ... winner (achievement)":
             achievements = st.selectbox(
-                "Choose my achievements:",
-                ["Top 5 league", "Champions League", "World Cup", "European championship", "Europa League"]
+                "Choose my achievement:",
+                ["Top 5 league", "Champions League", "World Cup"]
             )
+            selected = achievements
 
         elif question_template == "I am older than ...(age)":
-            age = st.slider("",
+            age = st.slider(
+                "Select an age:",
                 min_value=15, max_value=45, value=30, step=1
             )
+            selected = f"older than {age}"
 
         elif question_template == "I am younger than ...(age)":
-            age = st.slider("",
+            age = st.slider(
+                "Select an age:",
                 min_value=15, max_value=45, value=30, step=1
             )
+            selected = f"younger than {age}"
 
         elif question_template == "I play as ...(position)":
             position = st.selectbox(
                 "Choose a position:",
                 ["GK", "Defender", "Midfielder", "Striker"]
             )
+            selected = position
 
         elif question_template == "I wear the shirt number ... at my current club (shirt number)":
-            shirt_number = st.selectbox(
-                "Write a shirt number:",
-                ["Unter 20", "20-30", "Über 30"]
+            shirt_number = st.text_input(
+                "Enter a shirt number:"
             )
+            selected = shirt_number
 
         elif question_template == "I am taller than ...(height)":
             height = st.slider(
                 "Select my height:",
-                min_value=1.50, max_value=2.20, value=1.85, step=0.01
+                min_value=150, max_value=220, value=185, step=1
             )
             selected = f"taller than {height} cm"
 
         elif question_template == "I am shorter than ...(height)":
-            height = st.selectbox(
+            height = st.slider(
                 "Select my height:",
-                min_value=1.50, max_value=2.20, value=1.85, step=0.01
+                min_value=150, max_value=220, value=185, step=1
             )
+            selected = f"shorter than {height} cm"
 
+    # Ask Question Button
     with col3:
         if st.button("Ask Question"):
-            with container:
-                if selected:
-                    st.write(f"{question_template.replace('...', selected)}")
-                else:
-                    st.warning("Please provide an additional input to complete the question.")
-        
+            # Add the question to the session state list
+            if selected:
+                full_question = question_template.replace("...", selected)
+                st.session_state.questions.append(full_question)
+            else:
+                st.warning("Please provide an additional input to complete the question.")
 
+    # Display all questions asked so far
+    st.subheader("Questions Asked:")
+    for i, question in enumerate(st.session_state.questions, start=1):
+        st.write(f"{i}. {question}")
 
-
-
-
-    
-        
- 
