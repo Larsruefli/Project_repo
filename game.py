@@ -98,13 +98,15 @@ def test():
 
     with col3:
         search_button = st.button("Ask Question")
+        if search_button:
+            container.write(question_template, selected)
         
 
 
     container = st.container(border= True)
     with container:
-        if search_button:
-            container.write(question_template, selected)
+        pass
+
 
 
 
