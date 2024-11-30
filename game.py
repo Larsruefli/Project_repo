@@ -19,7 +19,7 @@ def test():
 
     # Erste Selectbox mit Fragen
 
-    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="center")
+    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
 
     with col1:
         question_template = st.selectbox(
@@ -34,77 +34,67 @@ def test():
                 "Choose my club:",
                 ["Real Madrid", "Arsenal", "Liverpool"] #!!!!!
             )
-            st.write(f"You chose: {current_club}")
+            
 
         elif question_template == "I play in ... (league)":
             league = st.selectbox(
                 "Choose my league:",
                 ["Premier League", "Bundesliga", "Eredivise", "LaLiga", "Serie A", "Ligue 1", "Liga Portugal", "Süper Lig", "Jupiler Pro League"]
             )
-            st.write(f"You chose: {league}")
 
         elif question_template == "I am from ...(nationality)":
             nationality = st.selectbox(
                 "Choose my country:",
                 ["Germany", "Switzerland", "Spain"]
             )
-            st.write(f"You chose: {nationality}")
 
         elif question_template == "I used to play for ...(club)":
             past_club = st.selectbox(
                 "Choose a club:",
                 ["Real Mardid", "Arsenal", "Liverpool"]
             )
-            st.write(f"You chose: {past_club}")
 
         elif question_template == "I am a ... winner (achievement)":
             achievements = st.selectbox(
                 "Choose my achievements:",
                 ["Top 5 league", "Champions League", "World Cup", "European championship", "Europa League"]
             )
-            st.write(f"You chose: {achievements}")
 
         elif question_template == "I am older than ...(age)":
             age = st.slider(
                 "Select my age:",
                 min_value=15, max_value=45, value=30, step=1
             )
-            st.write(f"I am older than {age}")
 
         elif question_template == "I am younger than ...(age)":
             age = st.slider(
                 "Select your age:",
                 min_value=15, max_value=45, value=30, step=1
             )
-            st.write(f"I am younger than {age}")
 
         elif question_template == "I play as ...(position)":
             position = st.selectbox(
                 "Choose a position:",
                 ["GK", "Defender", "Midfielder", "Striker"]
             )
-            st.write(f"You chose: {position}")
 
         elif question_template == "I wear the shirt number ... at my current club (shirt number)":
             shirt_number = st.selectbox(
                 "Write a shirt number:",
                 ["Unter 20", "20-30", "Über 30"]
             )
-            st.write(f"You chose: {shirt_number}")
 
         elif question_template == "I am taller than ...(height)":
             height = st.slider(
                 "Select my height:",
                 min_value=1.50, max_value=2.20, value=1.85, step=0.01
             )
-            st.write(f"I am taller than {height}")
 
         elif question_template == "I am shorter than ...(height)":
             height = st.selectbox(
                 "Select my height:",
                 min_value=1.50, max_value=2.20, value=1.85, step=0.01
             )
-            st.write(f"I am shorter than {height}")
 
     with col3:
         search_button = st.button("Ask Question")
