@@ -29,13 +29,14 @@ def test():
 
     # Weiterführende Auswahl von Kriterien durch if Funktion
     with col2:
+        selected = None
         if question_template == "I am currently playing for ...(club)":
             current_club = st.selectbox(
                 "Choose my club:",
                 ["Real Madrid", "Arsenal", "Liverpool"] #!!!!!
             )
             selected = current_club
-            return question_template, selected
+            
             
 
         elif question_template == "I play in ... (league)":
@@ -43,6 +44,7 @@ def test():
                 "Choose my league:",
                 ["Premier League", "Bundesliga", "Eredivise", "LaLiga", "Serie A", "Ligue 1", "Liga Portugal", "Süper Lig", "Jupiler Pro League"]
             )
+            selected = league
 
         elif question_template == "I am from ...(nationality)":
             nationality = st.selectbox(
@@ -97,9 +99,12 @@ def test():
             )
 
     with col3:
-        search_button = st.button("Ask Question")
-        if search_button:
-            container.write(question_template, selected)
+        if st.button("Ask Question"):
+            with container:
+                if selected:
+                    st.write(f"**Question:** {question_template.replace('...', selected)}")
+                else:
+                    st.warning("Please provide an additional input to complete the question.")
         
 
 
