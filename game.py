@@ -7,7 +7,7 @@ def test():
 
 
     option = st.selectbox(
-    "How difficult should be the Game?",
+    "How difficult should the Game be?",
     ("None", "Easy", "Medium", "Hard"),
     index=None,
     placeholder="Select a difficulty level...",
@@ -20,11 +20,11 @@ def test():
     # Erste Selectbox mit Vorlagen
     question_template = st.selectbox(
         "Wählen Sie eine Vorlage für Ihre Frage:",
-        ["", "Option 1: Fußpräferenz", "Option 2: Position", "Option 3: Alter"]
+        ["", "Option 1: I am currently playing for ...(club)", "Option 2: I play in ... (league)", "Option 3: I am from ...(nationality)", "Option 4: I used to play for ...(club)", "Option 5: I am a ... winner", "Option 6: I am older than ...(age)", "Option 7: I am younger than ...(age)", "Option 8: I play as ...(position)", "Option 9: I wear the shirt number ... at my current club (shirt number)", "Option 10: I am taller than ...(height)", "Option 11: I am shorter than ...(height)"]
     )
 
     # Überprüfung, ob die erste Option gewählt wurde
-    if question_template == "Option 1: Fußpräferenz":
+    if question_template == "Option 1: I am currently playing for ...(club)":
         foot_preference = st.selectbox(
             "Wählen Sie die Fußpräferenz:",
             ["Linksfuss", "Rechtsfuss"]
