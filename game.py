@@ -24,7 +24,7 @@ def test():
     )
 
     # Überprüfung, ob die erste Option gewählt wurde
-    if question_template == "Option 1: I am currently playing for ...(club)":
+    if question_template == "I am currently playing for ...(club)":
         foot_preference = st.selectbox(
             "Wählen Sie die Fußpräferenz:",
             ["Linksfuss", "Rechtsfuss"]
