@@ -45,7 +45,7 @@ def test():
             )
             selected = current_club
             
-            
+        
         elif question_template == "I play in ... (league)":
             league = st.selectbox(
                 "Choose my league:",
