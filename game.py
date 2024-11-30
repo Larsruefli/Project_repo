@@ -4,7 +4,7 @@ def test():
     st.header("Who am I?")
 
     # Display the logo at the top of the page
-
+    st.image("logo.png", caption="Logo")
 
     option = st.selectbox(
     "How difficult should the Game be?",
@@ -108,6 +108,8 @@ def test():
 
     with col3:
         search_button = st.button("Ask Question")
+
+
 
     
         
