@@ -19,7 +19,7 @@ def test():
 
     # Erste Selectbox mit Fragen
 
-    col1, col2, col3 = st.columns([2,2,1])
+    col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
 
     with col1:
         question_template = st.selectbox(
@@ -109,7 +109,6 @@ def test():
     with col3:
         search_button = st.button("Ask Question")
 
-    st.write("Hello")
 
 
     
