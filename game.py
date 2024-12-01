@@ -116,20 +116,19 @@ def test():
             )
             selected = f"shorter than {height} cm"
 
- # Ask Question Button
     with col3:
-        # Ask Question Button
         if st.button("Ask Question"):
+            # Add the question to the session state list
             if selected:
                 full_question = question_template.replace("...", selected)
                 st.session_state.questions.append(full_question)
-
-                # Simulate correctness input (e.g., from some external check)
-                # For this demo, assume all answers are "yes" for simplicity.
-                is_correct = st.radio(f"Was the answer for '{full_question}' correct?", ["Yes", "No"])
-                st.session_state.correctness.append("Yes" if is_correct == "Yes" else "No")
             else:
-                st.warning("Please provide additional input to complete the question.")
+                st.warning("Please provide an additional input to complete the question.")
+
+    # Display all questions asked so far
+    st.subheader("Questions Asked:")
+    for i, question in enumerate(st.session_state.questions, start=1):
+        st.write(f"{i}. {question}")
 
     
 
