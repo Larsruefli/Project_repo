@@ -130,15 +130,26 @@ def test():
     for i, question in enumerate(st.session_state.questions, start=1):
         st.write(f"{i}. {question}")
 
+    # Input field and button
+    col1, col2 = st.columns([3, 1], gap="small")
 
-    # Two Columns for the Gussing Input of the User and the Button Guess
-    col1, col2 = st.columns([3,1], vertical_alignment="bottom")
-
-    with col1: 
-        user_input = st.text_input("Enter your input here:", label_visibility="collapsed", placeholder="Type Player here")
+    with col1:
+        user_input = st.text_input("Enter your guess:", placeholder="Type Player here", label_visibility="collapsed")
 
     with col2:
         button_clicked = st.button("Guess")
+
+    if button_clicked:
+        if user_input.strip():  # Check if input is not empty
+            st.success(f"You guessed: {user_input}")
+        else:
+            st.error("Please enter a player's name before guessing.")
+
+
+    
+
+
+    
 
     
 
