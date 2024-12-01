@@ -1,10 +1,8 @@
 import streamlit as st
 
-players_data = {
-    "Lionel Messi": "messi.jpg",
-    "Cristiano Ronaldo": "ronaldo.jpg",
-    "Neymar Jr": "neymar.jpg",
-}
+players_data = [
+    "Lionel Messi"
+]
 
 def test():
     # Create a centered layout
