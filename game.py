@@ -1,7 +1,6 @@
 import streamlit as st
 
 def test():
-
     # Create a centered layout
     col1, col2, col3 = st.columns([4, 2, 4])  # The middle column takes up the majority of the space
 
@@ -9,11 +8,21 @@ def test():
         # Display the logo at the top of the page
         st.image("logo.png", width=200)
 
-
     if "questions" not in st.session_state:
         st.session_state.questions = []
 
+    # Initialisiere Session-State für Leben und erratene Spieler
+    if "lives" not in st.session_state:
+        st.session_state.lives = 3  # Spieler startet mit 3 Leben
+    if "guessed_players" not in st.session_state:
+        st.session_state.guessed_players = []
 
+    # Obere rechte Ecke: Lebensanzeige
+    with st.sidebar:
+        st.markdown("### Lives Remaining:")
+        lives_display = "⚽ " * st.session_state.lives + "❌ " * (3 - st.session_state.lives)
+        st.write(lives_display)
+        
     option = st.selectbox(
     "How difficult should the Game be?",
     ("None", "Easy", "Medium", "Hard"),
@@ -22,8 +31,6 @@ def test():
     )
 
     st.write("You selected:", option)
-
-    
 
     # Indiz vor der ersten Frage. Wo?
     # User muss auf dieser Seite irgendwie vorhanden sein; Spieler 1 ist an der Reihe... 
