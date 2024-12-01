@@ -3,20 +3,12 @@ import streamlit as st
 def test():
     st.header("Who am I?")
 
-   # HTML to center the image
-    st.markdown(
-        """
-        <style>
-        .centered-img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        </style>
-        """, unsafe_allow_html=True)
+    # Create a centered layout
+    col1, col2, col3 = st.columns([1, 4, 1])  # The middle column takes up the majority of the space
 
-    # Display the logo with a centered class
-    st.markdown('<img class="centered-img" src="logo.png" width="100">', unsafe_allow_html=True)
+    with col2:
+        # Display the logo at the top of the page
+        st.image("logo.png", width=100)
 
 
     if "questions" not in st.session_state:
