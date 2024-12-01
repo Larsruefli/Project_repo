@@ -28,12 +28,12 @@ def test():
 
     difficulty = st.selectbox(
     "Select Difficulty:",
-    ("None", "Easy", "Medium", "Hard"),
+    ("empty", "None", "Easy", "Medium", "Hard"),
     index=0,
     placeholder="Select a difficulty level...",
     )
 
-    if difficulty == "None":
+    if difficulty == "empty":
         st.warning("Please select a difficulty level to proceed.")
     else:
         st.success(f"You selected: {difficulty}")
