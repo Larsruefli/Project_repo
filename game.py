@@ -135,7 +135,7 @@ def test():
     col1, col2 = st.columns([3,1], vertical_alignment="bottom")
 
     with col1: 
-        user_input = st.text.input("Enter your input here:", label_visibility="collapsed", placeholder="Type Player here")
+        user_input = st.text_input("Enter your input here:", label_visibility="collapsed", placeholder="Type Player here")
 
     with col2:
         button_clicked = st.button("Guess")
