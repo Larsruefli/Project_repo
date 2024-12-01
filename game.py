@@ -1,8 +1,8 @@
 import streamlit as st
 
-players_data = [
-    "Lionel Messi"
-]
+players_data = {
+    "player": "Lionel Messi"
+}
 
 def test():
     # Create a centered layout
