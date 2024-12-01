@@ -131,19 +131,7 @@ def test():
             else:
                 st.warning("Please provide additional input to complete the question.")
 
-    # Display all questions asked so far with correctness
-    st.subheader("Questions Asked:")
-    for i, (question, is_correct) in enumerate(st.session_state.questions, start=1):
-        status = f'<span style="color:green;">Yes</span>' if is_correct else f'<span style="color:red;">No</span>'
-        st.markdown(f"{i}. {question} - {status}", unsafe_allow_html=True)
-
-    col1, col2 = st.columns([3,1], vertical_alignment="bottom")
-
-    with col1: 
-        user_input = st.text.input("Enter your input here:", label_visibility="collapsed", placeholder="Type Player here")
-
-    with col2:
-        button_clicked = st.button("Guess")
+    
 
     
 
