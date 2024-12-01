@@ -4,7 +4,7 @@ def test():
     st.header("Who am I?")
 
     # Create a centered layout
-    col1, col2, col3 = st.columns([1, 4, 1])  # The middle column takes up the majority of the space
+    col1, col2, col3 = st.columns([4, 1, 4])  # The middle column takes up the majority of the space
 
     with col2:
         # Display the logo at the top of the page
