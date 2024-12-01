@@ -38,6 +38,9 @@ def test():
     else:
         st.success(f"You selected: {difficulty}")
 
+# Display questions only if a valid difficulty is selected !! 
+# Implement the Coditions for the difficulty levels
+
     # Indiz vor der ersten Frage. Wo?
     # User muss auf dieser Seite irgendwie vorhanden sein; Spieler 1 ist an der Reihe... 
 
