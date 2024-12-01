@@ -28,7 +28,7 @@ def test():
 
     difficulty = st.selectbox(
     "Select Difficulty:",
-    ("empty", "None", "Easy", "Medium", "Hard"),
+    ("Select Difficulty", "None", "Easy", "Medium", "Hard"),
     index=0,
     placeholder="Select a difficulty level...",
     )
