@@ -33,7 +33,7 @@ def test():
     placeholder="Select a difficulty level...",
     )
 
-    if difficulty == "empty":
+    if difficulty == "Select Difficulty":
         st.warning("Please select a difficulty level to proceed.")
     else:
         st.success(f"You selected: {difficulty}")
