@@ -6,7 +6,7 @@ players_data = {
 
 def test():
     # Create a centered layout
-    col1, col2, col3, col4, col5 = st.columns([3, 2, 2, 2, 3])  # The middle column takes up the majority of the space
+    col1, col2, col3, col4, col5 = st.columns([3, 2, 3, 2, 3])  # The middle column takes up the majority of the space
 
     with col3:
         # Display the logo at the top of the page
