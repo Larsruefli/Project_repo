@@ -23,7 +23,6 @@ def test():
 
     # Obere rechte Ecke: Lebensanzeige
     with col3:
-        st.markdown("### Lives Remaining:")
         lives_display = "⚽" * st.session_state.lives + "❌ " * (3 - st.session_state.lives)
         st.write(lives_display)
 
