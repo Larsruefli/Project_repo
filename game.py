@@ -26,14 +26,17 @@ def test():
         lives_display = "⚽" * st.session_state.lives + "❌ " * (3 - st.session_state.lives)
         st.write(lives_display)
 
-    option = st.selectbox(
-    "How difficult should the Game be?",
+    difficulty = st.selectbox(
+    "Select Difficulty:",
     ("None", "Easy", "Medium", "Hard"),
-    index=None,
+    index=0,
     placeholder="Select a difficulty level...",
     )
 
-    st.write("You selected:", option)
+    if difficulty == "None":
+        st.warning("Please select a difficulty level to proceed.")
+    else:
+        st.success(f"You selected: {difficulty}")
 
     # Indiz vor der ersten Frage. Wo?
     # User muss auf dieser Seite irgendwie vorhanden sein; Spieler 1 ist an der Reihe... 
