@@ -22,9 +22,9 @@ def test():
         st.session_state.guessed_players = []
 
     # Obere rechte Ecke: Lebensanzeige
-    with st.sidebar:
+    with col3:
         st.markdown("### Lives Remaining:")
-        lives_display = "⚽ " * st.session_state.lives + "❌ " * (3 - st.session_state.lives)
+        lives_display = "⚽" * st.session_state.lives + "❌ " * (3 - st.session_state.lives)
         st.write(lives_display)
 
     option = st.selectbox(
@@ -154,30 +154,25 @@ def test():
     with col2:
         button_clicked = st.button("Guess")
 
-        # Initialize state
-    if "guess_pressed" not in st.session_state:
-        st.session_state.guess_pressed = False
-
+    # Überprüfung bei Button-Klick
     if button_clicked:
-        st.session_state.guess_pressed = True
-
-    if st.session_state.guess_pressed:
-        if user_input in players_data and user_input not in st.session_state.guessed_players:
-            st.success("🎉 You guessed the player correctly!")
-            st.image(players_data[user_input], caption=f"{user_input}", width=200)
-            st.session_state.guessed_players.append(user_input)
-        elif user_input in st.session_state.guessed_players:
-            st.warning("You already guessed this player!")
-        else:
-            # Spieler nicht korrekt erraten
-            st.session_state.lives -= 1
-            if st.session_state.lives > 0:
-                st.error(f"❌ Wrong guess! You have {st.session_state.lives} lives left.")
+        if st.session_state.lives > 0:
+            if user_input in players_data and user_input not in st.session_state.guessed_players:
+                # Spieler korrekt erraten
+                st.success("🎉 You guessed the player correctly!")
+                st.image(players_data[user_input], caption=f"{user_input}", width=200)
+                st.session_state.guessed_players.append(user_input)
+            elif user_input in st.session_state.guessed_players:
+                st.warning("You already guessed this player!")
             else:
-                st.error("❌ Game over! You've used up all your lives.")
-        
-        # Reset the flag after processing
-        st.session_state.guess_pressed = False
+                # Spieler nicht korrekt erraten
+                st.session_state.lives -= 1
+                if st.session_state.lives > 0:
+                    st.error(f"❌ Wrong guess! You have {st.session_state.lives} lives left.")
+                else:
+                    st.error("❌ Game over! You've used up all your lives.")
+        else:
+            st.error("❌ No lives left! Restart the app to try again.")
 
 
 
