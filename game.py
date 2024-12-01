@@ -1,7 +1,6 @@
 import streamlit as st
 
 def test():
-    st.header("Who am I?")
 
     # Create a centered layout
     col1, col2, col3 = st.columns([4, 2, 4])  # The middle column takes up the majority of the space
