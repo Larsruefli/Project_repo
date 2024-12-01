@@ -53,7 +53,7 @@ def test():
     with col1:
         question_template = st.selectbox(
             "Choose a question:",
-            ["I am currently playing for ...", "I play in ...", "I am from ...", "I used to play for ...", "I am a ... winner", "I am older than ...", "I am younger than ...", "I play as ...", "I wear the shirt number ... at my current club", "I am taller than ...", "I am shorter than ..."]
+            ["", "I am currently playing for ...", "I play in ...", "I am from ...", "I used to play for ...", "I am a ... winner", "I am older than ...", "I am younger than ...", "I play as ...", "I wear the shirt number ... at my current club", "I am taller than ...", "I am shorter than ..."]
         )
 
     # Weiterführende Auswahl von Kriterien durch if Funktion
@@ -62,7 +62,7 @@ def test():
         if question_template == "I am currently playing for ...":
             current_club = st.selectbox(
                 "Choose my club:",
-                ["Real Madrid", "Arsenal", "Liverpool"] #!!!!!
+                ["", "Real Madrid", "Arsenal", "Liverpool"] #!!!!!
             )
             selected = current_club
             
