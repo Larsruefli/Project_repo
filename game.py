@@ -131,10 +131,10 @@ def test():
         st.write(f"{i}. {question}")
 
     # Input field and button
-    col1, col2 = st.columns([3, 1], gap="small")
+    col1, col2 = st.columns([3,2], gap="small")
 
     with col1:
-        user_input = st.text_input("Enter your guess:", placeholder="Type Player here", label_visibility="collapsed")
+        user_input = st.text_input("Enter your guess:", placeholder="Type Player here...", label_visibility="collapsed")
 
     with col2:
         button_clicked = st.button("Guess")
