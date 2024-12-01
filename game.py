@@ -145,15 +145,7 @@ def test():
     with col2:
         button_clicked = st.button("Guess")
 
-    if button_clicked:
-        if user_input in players_data:
-            # Spieler gefunden
-            st.success("🎉 You guessed the player correctly!")
-            # Zeige das Bild in der Mitte
-            st.image(players_data[user_input], caption=f"{user_input}", width=200)
-        else:
-            # Spieler nicht gefunden
-            st.error("❌ That's the wrong player. Try again!")
+    
 
 
 

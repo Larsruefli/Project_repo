@@ -22,5 +22,6 @@ def test():
                     st.write(f"Name: {result['Name']}, Position: {result['Position']}, Team: {result['Team']}")
             else:
                 st.write("No results found")
-#Hier muss der Output dann noch schön dargestellt werden
+# Hier muss der Output dann noch schön dargestellt werden
+# Und evtl. Grafik mit Marktwert Entwicklung
 
