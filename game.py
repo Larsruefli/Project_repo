@@ -8,7 +8,7 @@ def test():
 
     with col2:
         # Display the logo at the top of the page
-        st.image("logo.png", width=100)
+        st.image("logo.png", width=200)
 
 
     if "questions" not in st.session_state:
