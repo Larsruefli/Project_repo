@@ -21,7 +21,8 @@ def test():
 
     
 
-    #Indiz vor der ersten Frage. Wo?
+    # Indiz vor der ersten Frage. Wo?
+    # User muss auf dieser Seite irgendwie vorhanden sein; Spieler 1 ist an der Reihe... 
 
     # Erste Selectbox mit Fragen
 
