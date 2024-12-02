@@ -39,7 +39,7 @@ def test():
         st.success(f"You selected: {difficulty}")
 
 # Display questions only if a valid difficulty is selected !! 
-# Implement the Coditions for the difficulty levels
+# Implement the Conditions for the difficulty levels
 
     # Indiz vor der ersten Frage. Wo?
     # User muss auf dieser Seite irgendwie vorhanden sein; Spieler 1 ist an der Reihe... 
@@ -47,8 +47,6 @@ def test():
     # Erste Selectbox mit Fragen
 
     col1, col2, col3 = st.columns([2,2,1], vertical_alignment="bottom")
-
-   
 
     with col1:
         question_template = st.selectbox(
@@ -76,7 +74,6 @@ def test():
             )
             selected = current_club
             
-        
         elif question_template == "I play in ...":
             league = st.selectbox(
                 "Choose my league:",
@@ -90,7 +87,6 @@ def test():
                 ["Germany", "Switzerland", "Spain"]
             )
             selected = nationality
-
 
         elif question_template == "I used to play for ...":
             past_club = st.selectbox(
